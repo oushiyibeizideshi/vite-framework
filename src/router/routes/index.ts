@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-import { RouteType } from "../type"
+// import { RouteType } from "../type"
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能 ，不开eager要使用then,导致异步
 const modules: any = import.meta.glob("./modules/**/*.ts", { eager: true })
 

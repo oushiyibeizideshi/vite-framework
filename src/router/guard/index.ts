@@ -10,9 +10,9 @@ export function setupRouterGuard(router: Router): void {
 function createPageGuard(router: Router): void {
   const loadedPageMap = new Map<string, boolean>()
 
-  router.beforeEach(async (to: RouteLocationNormalized) => {
-    return true
-  })
+  // router.beforeEach(async (to: RouteLocationNormalized) => {
+  //   return true
+  // })
 
   router.afterEach((to: RouteLocationNormalized) => {
     loadedPageMap.set(to.path, true)
