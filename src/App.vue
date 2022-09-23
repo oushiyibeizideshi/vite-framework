@@ -1,21 +1,24 @@
 <template>
-  <div></div>
+  <a-config-provider>
+    <a-button type="primary">44444</a-button>
+  </a-config-provider>
 </template>
 <script setup lang="ts">
-import { onMounted } from "vue"
-import axios from "axios"
-import { request } from "@/utils/axios"
-onMounted(() => {
-  console.log("onMounted")
+import { ConfigProvider } from "ant-design-vue/es"
 
-  request({
-    url: "/user/112",
-    method: "GET"
-  })
-  axios({
-    url: "http://127.0.0.1:3000/user/112",
-    method: "get"
-  })
+ConfigProvider.config({
+  theme: {
+    primaryColor: "skyblue",
+    infoColor: "#1890ff",
+    successColor: "#52c41a",
+    // processingColor: string;
+    errorColor: "#ff4d4f",
+    warningColor: "#faad14"
+  }
 })
 </script>
-<style scoped></style>
+<style lang="less" scoped>
+.body {
+  background-color: pink;
+}
+</style>

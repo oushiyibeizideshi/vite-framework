@@ -1,20 +1,37 @@
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
 import { resolve } from "path"
-// element-plus自动导入
+// https://github.com/antfu/unplugin-auto-import
+/**
+ * 不用自己引入ref,onMounted等
+ */
 import AutoImport from "unplugin-auto-import/vite"
 import Components from "unplugin-vue-components/vite"
-import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
+import { AntDesignVueResolver } from "unplugin-vue-components/resolvers"
 
 // https://juejin.cn/post/7039879176534360077
 export default defineConfig({
   plugins: [
     vue(),
     AutoImport({
-      resolvers: [ElementPlusResolver()]
+      include: [
+        /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+        /\.vue$/,
+        /\.vue\?vue/, // .vue
+        /\.md$/ // .md
+      ],
+      imports: [
+        // presets
+        "vue",
+        "vue-router"
+      ],
+      dts: "./auto-imports.d.ts",
+      eslintrc: {
+        enabled: true
+      }
     }),
     Components({
-      resolvers: [ElementPlusResolver()]
+      resolvers: [AntDesignVueResolver()]
     })
   ], // 配置项目别名
   resolve: {
@@ -41,7 +58,7 @@ export default defineConfig({
     // 反向代理配置
     proxy: {
       "/api": {
-        target: "https://127.0.0.1:3000",
+        target: "http://192.168.1.99:3021/tzjymobile",
         changeOrigin: true,
         rewrite: path => path.replace(/^\/api/, "")
       }
