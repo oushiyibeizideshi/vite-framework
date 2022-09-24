@@ -8,7 +8,7 @@ module.exports = {
     "plugin:vue/vue3-essential",
     "standard-with-typescript",
     "plugin:prettier/recommended",
-    './.eslintrc-auto-import.json',
+    "./config/.eslintrc-auto-import.json"
   ],
   overrides: [
     {
@@ -43,6 +43,7 @@ module.exports = {
     "prefer-arrow-callback": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
-    "@typescript-eslint/no-unsafe-member-access": "off"
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "vue/multi-word-component-names": "off"
   }
 }

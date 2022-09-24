@@ -25,13 +25,13 @@ Object.keys(modules).forEach(key => {
 // }
 
 // 根路由
-// export const RootRoute = {
-//   path: "/",
-//   name: "Root",
-//   redirect: "/login",
-//   meta: {
-//     title: "Root"
-//   }
-// }
+export const RootRoute = {
+  path: "/",
+  name: "Root",
+  redirect: "/home",
+  meta: {
+    title: "Root"
+  }
+}
 // export const AllRoutes = [LoginRoute, RootRoute, ...routeModuleList]
-export const AllRoutes = [...routeModuleList]
+export const AllRoutes = [RootRoute, ...routeModuleList]

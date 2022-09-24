@@ -1,9 +1,9 @@
 <template>
   <a-config-provider>
-    <a-button type="primary">44444</a-button>
+    <router-view></router-view>
   </a-config-provider>
 </template>
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ConfigProvider } from "ant-design-vue/es"
 
 ConfigProvider.config({

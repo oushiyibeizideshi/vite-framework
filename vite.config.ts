@@ -25,12 +25,14 @@ export default defineConfig({
         "vue",
         "vue-router"
       ],
-      dts: "./auto-imports.d.ts",
+      dts: "./config/auto-imports.d.ts",
       eslintrc: {
-        enabled: true
+        enabled: true,
+        filepath: "./config/.eslintrc-auto-import.json"
       }
     }),
     Components({
+      dts: "./config/components.d.ts",
       resolvers: [AntDesignVueResolver()]
     })
   ], // 配置项目别名
