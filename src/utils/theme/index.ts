@@ -2,7 +2,7 @@
  * @Author: oushiyibeizideshi
  * @Date: 2022-09-24 20:52:47
  * @LastEditors: oushiyibeizideshi
- * @LastEditTime: 2022-09-25 16:18:52
+ * @LastEditTime: 2022-09-28 00:21:55
  * @Description:
  *
  */
@@ -23,9 +23,6 @@ export const initialTheme = (): void => {
     themes = allTheme
     localStorage.setItem("themes", JSON.stringify(allTheme))
   }
-  console.log(currentThemeName)
-  console.log(themes)
-
   setTheme(currentThemeName)
 }
 

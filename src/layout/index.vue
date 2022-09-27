@@ -2,7 +2,7 @@
  * @Author: oushiyibeizideshi
  * @LastEditors: oushiyibeizideshi
  * @Date: 2022-09-23 22:44:07
- * @LastEditTime: 2022-09-25 20:26:06
+ * @LastEditTime: 2022-09-28 00:21:30
  * @Description:
  *
 -->
@@ -11,9 +11,7 @@ import LayoutHeader from "./LayoutHeader.vue"
 import SideBar from "./SideBar.vue"
 import { initialTheme } from "@/utils/theme"
 onMounted(() => {
-  setTimeout(() => {
-    initialTheme()
-  }, 3000)
+  initialTheme()
 })
 
 const collapsed = ref(false)
