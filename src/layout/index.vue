@@ -3,8 +3,8 @@
  * @LastEditors: oushiyibeizideshi
  * @Date: 2022-09-23 22:44:07
  * @LastEditTime: 2022-09-25 20:26:06
- * @Description: 
- * 
+ * @Description:
+ *
 -->
 <script setup lang="ts">
 import LayoutHeader from "./LayoutHeader.vue"
@@ -25,7 +25,13 @@ const collapsed = ref(false)
       <a-layout-sider v-model:collapsed="collapsed" collapsible>
         <side-bar></side-bar>
       </a-layout-sider>
-      <a-layout-content><div class="box"></div></a-layout-content>
+      <a-layout-content>
+        <router-view v-slot="{ Component }">
+          <transition name="fade">
+            <component :is="Component" />
+          </transition>
+        </router-view>
+      </a-layout-content>
     </a-layout>
   </a-layout>
 </template>

@@ -1,5 +1,7 @@
 <script setup lang="ts"></script>
+
 <template>
-  <div>div</div>
+  <div>menu2</div>
 </template>
-<style scoped></style>
+
+<style lang="scss" scoped></style>

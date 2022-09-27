@@ -15,7 +15,10 @@ declare module '@vue/runtime-core' {
     AMenu: typeof import('ant-design-vue/es')['Menu']
     AMenuItem: typeof import('ant-design-vue/es')['MenuItem']
     ASubMenu: typeof import('ant-design-vue/es')['SubMenu']
+    InfiniteDeepMenu: typeof import('./../src/components/InfiniteDeepMenu/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    SubMenu: typeof import('./../src/components/InfiniteDeepMenu/SubMenu.vue')['default']
+    Undefined: typeof import('./../src/components/index.vue')['default']
   }
 }

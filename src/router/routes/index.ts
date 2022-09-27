@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
-// import { RouteType } from "../type"
+import { RouteType } from "../type"
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能 ，不开eager要使用then,导致异步
 const modules: any = import.meta.glob("./modules/**/*.ts", { eager: true })
 
-const routeModuleList: any[] = []
+const routeModuleList: RouteType[] = []
 console.log("modules", modules)
 // 加入到路由集合中
-Object.keys(modules).forEach(key => {
+Object.keys(modules).forEach((key: string) => {
   // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions
   const mod: any = modules[key].default || {}
   routeModuleList.push(...[mod])
