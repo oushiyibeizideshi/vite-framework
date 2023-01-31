@@ -50,11 +50,11 @@ export default defineConfig({
     ]
   },
   server: {
-    // host: "localhost",
+    host: "0.0.0.0",
     // https: false, // 是否启用 http 2
     cors: true, // 为开发服务器配置 CORS , 默认启用并允许任何源
     // open: true, // 服务启动时自动在浏览器中打开应用
-    port: 5174,
+    port: 8001,
     proxy: {
       "/api": {
         target: "http://192.168.1.99:3021/tzjymobile",

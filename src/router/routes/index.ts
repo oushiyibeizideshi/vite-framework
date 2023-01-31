@@ -35,5 +35,16 @@ export const RootRoute = {
     title: "Root"
   }
 }
-// export const AllRoutes = [LoginRoute, RootRoute, ...routeModuleList]
-export const AllRoutes = [RootRoute, ...routeModuleList]
+const homeRoutes = {
+  path: "/home",
+  name: "home",
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+  component: async () => await import("@/layout/index.vue"),
+  meta: {
+    title: "home"
+  },
+  children: [] as RouteType[]
+}
+homeRoutes.children = routeModuleList
+export const AllRoutes = [RootRoute, homeRoutes]

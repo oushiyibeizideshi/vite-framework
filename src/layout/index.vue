@@ -1,20 +1,24 @@
 <script setup lang="ts">
 import LayoutHeader from "./LayoutHeader.vue"
+import LayoutSiderMenu from "./LayoutSiderMenu.vue"
+import LayoutBreadcrumb from "./LayoutBreadcrumb.vue"
 </script>
 <template>
   <div class="common-layout">
-    <el-container>
-      <header>
+    <main>
+      <header style="height: 58px">
         <LayoutHeader />
       </header>
-      <el-container>
-        <el-aside width="200px">
-          <div class="w-96 h-96 bg-red-700 text-red-500">aside</div>
-        </el-aside>
-        <el-main> <router-view></router-view></el-main>
-      </el-container>
-    </el-container>
+      <div class="w-full flex" style="height: calc(100vh - 58px)">
+        <aside class="h-full">
+          <LayoutSiderMenu />
+        </aside>
+
+        <content class="w-full h-full">
+          <LayoutBreadcrumb />
+          <router-view />
+        </content>
+      </div>
+    </main>
   </div>
 </template>
-
-<style scoped></style>
