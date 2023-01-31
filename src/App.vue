@@ -7,21 +7,15 @@
  * 
 -->
 <template>
-  <a-config-provider>
+  <el-config-provider>
     <router-view></router-view>
-  </a-config-provider>
+  </el-config-provider>
 </template>
 <script lang="ts" setup>
-import { ConfigProvider } from "ant-design-vue/es"
-
-ConfigProvider.config({
-  theme: {
-    primaryColor: "skyblue",
-    infoColor: "#1890ff",
-    successColor: "#52c41a",
-    // processingColor: string;
-    errorColor: "#ff4d4f",
-    warningColor: "#faad14"
-  }
+onMounted(() => {
+  console.log("App mounted")
 })
 </script>
+<style lang="scss">
+@import url(@/assets/style/global.scss);
+</style>

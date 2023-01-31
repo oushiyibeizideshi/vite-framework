@@ -1,12 +1,11 @@
-import { createApp } from "vue"
+import { createApp, Component } from "vue"
 import { setupStore } from "@/store"
 import { router, setupRouter } from "@/router"
+import "@/assets/style/default.css"
 import App from "@/App.vue"
-import "ant-design-vue/dist/antd.variable.min.css"
-import "@/assets/style/default.less"
 
-const bootstrap = (): any => {
-  const app = createApp(App)
+const bootstrap = (): void => {
+  const app = createApp(App as Component)
   setupRouter(app)
   setupStore(app)
   app.mount("#app")

@@ -3,6 +3,8 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import { RouteType } from "../type"
 // import.meta.glob() 直接引入所有的模块 Vite 独有的功能 ，不开eager要使用then,导致异步
+
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
 const modules: any = import.meta.glob("./modules/**/*.ts", { eager: true })
 
 const routeModuleList: RouteType[] = []

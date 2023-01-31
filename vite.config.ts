@@ -15,7 +15,7 @@ import { resolve } from "path"
  */
 import AutoImport from "unplugin-auto-import/vite"
 import Components from "unplugin-vue-components/vite"
-import { AntDesignVueResolver } from "unplugin-vue-components/resolvers"
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers"
 
 // https://juejin.cn/post/7039879176534360077
 export default defineConfig({
@@ -28,20 +28,17 @@ export default defineConfig({
         /\.vue\?vue/, // .vue
         /\.md$/ // .md
       ],
-      imports: [
-        // presets
-        "vue",
-        "vue-router"
-      ],
+      imports: ["vue", "vue-router"],
       dts: "./config/auto-imports.d.ts",
       eslintrc: {
         enabled: true,
         filepath: "./config/.eslintrc-auto-import.json"
-      }
+      },
+      resolvers: [ElementPlusResolver()]
     }),
     Components({
       dts: "./config/components.d.ts",
-      resolvers: [AntDesignVueResolver()]
+      resolvers: [ElementPlusResolver()]
     })
   ], // 配置项目别名
   resolve: {
@@ -53,7 +50,7 @@ export default defineConfig({
     ]
   },
   server: {
-    host: "localhost",
+    // host: "localhost",
     // https: false, // 是否启用 http 2
     cors: true, // 为开发服务器配置 CORS , 默认启用并允许任何源
     // open: true, // 服务启动时自动在浏览器中打开应用
